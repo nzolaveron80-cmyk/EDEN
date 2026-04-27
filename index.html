@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EDEN📘</title>
+</head>
+
+<body>
+    <header>
+        <h1>EDEN</h1>
+        <nav class="navbar">
+            <ul> 
+                 <li><a onclick="afficher(event)"  class="btn" id="link1">Acceuil</a></li>
+                 <li><a onclick="afficher(event)"  class="btn" id="link2">Login</a></li>
+                 <li><a onclick="afficher(event)"   class="btn" id="link3">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+ <main id="acceuil">
+        <section class="panel panel1" id="pan1">
+        <div class="box">
+
+            <h1>EDEN</h1>
+            <p>
+                <span style="color: aqua;">E</span>ducation <span style="color: aqua;">E</span>nquiry votre plateforme
+                qui vous conseil et vous oriente dans votre
+                parcours éducative
+            </p>
+            <a href="#pan2"><button>voir plus</button></a>
+        </div>
+    </section>
+
+
+    <section class="panel panel2" id="pan2">
+        <h1 style="margin-left: 7px;">Test ton orientation maintenant</h1>
+        <div class="box">
+              
+             
+            <br>
+            <div class="chat-demo">
+                <div class="chat-header">EDEN Assistant</div>
+
+                <div class="chat-body" id="chat">
+                     
+                </div>
+
+                <div class="chat-input">
+                    <span>Écris ton message...</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="panel panel3" id="pan3">
+        <h2>Comment ça marche</h2>
+        
+        <div class="container">
+            <div class=" box1 " style="margin-left: 70px;">
+                <img src="comment.png" alt="comment" width="500px">
+            </div>
+        </div>
+    </section>
+     <section class="panel panel4 " id="pan4">
+    <div class="container">
+        <h2>Ils ont trouvé leur voie avec EDEN</h2>
+        <p class="subtitle">Rejoins les milliers d’élèves déjà orientés en RDC</p>
+        
+        <!-- Témoignages -->
+        <div class="temoignages">
+            <div class="card">
+                <div class="stars">★★★★★</div>
+                <p>"J’hésitais entre 3 filières. En 15 min EDEN m’a donné la réponse. Je suis en L1 Info à l’UNIKIN et je regrette rien."</p>
+                <div class="profil">
+                    <strong>Glody M.</strong>
+                    <span>Terminale Scientifique</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="stars">★★★★★</div>
+                <p>"Le chatbot pose des questions que même mon conseiller scolaire n’a pas posées. Résultat hyper précis."</p>
+                <div class="profil">
+                    <strong>Prisca K.</strong>
+                    <span>Admise en Médecine UPC</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="stars">★★★★★</div>
+                <p>"Gratuit et sans prise de tête. Ma fille a évité une année perdue grâce à EDEN. Merci."</p>
+                <div class="profil">
+                    <strong>Papa Junior</strong>
+                    <span>Parent d’élève</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chiffres clés -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="nombre">15,000+</span>
+                <p>Élèves orientés</p>
+            </div>
+            <div class="stat-item">
+                <span class="nombre">96%</span>
+                <p>Taux de satisfaction</p>
+            </div>
+            <div class="stat-item">
+                <span class="nombre">15 min</span>
+                <p>Pour ton résultat</p>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <h3>À ton tour de trouver ta filière</h3>
+        <button id="btn-lancer-test" onclick="afficher(event)">
+            Lancer le test d’orientation gratuit
+        </button>
+        <p class="garantie">✅ 100% gratuit · ✅ Sans inscription · ✅ Données privées</p>
+    </div>
+  
+ 
+</main>
+
+
+ </main>
+       <main id="login">
+        <section class="login">
+ 
+                <form action="" method="post">
+                    <h2>connexion</h2>
+
+                    <div class="input-container">
+                        <input type="text" name="" id="input-name" required>
+                        <label for="input-name">Username</label>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" name="" id="input-password" required>
+                        <label for="input-password">Password</label>
+                        <span class="underline"></span>
+                    </div>
+                  
+                    <button type="submit" class="btn1">connexion</button>
+                     <br>
+                     <span>vous n'avez pas de compte  ?  clickez  <a href="#"> ici</a></span>
+                </form>
+         
+
+
+        </section>
+    </main>
+
+
+    <main id="message">
+    <div class="main">
+        <div class="chat-container" id="chat-box"></div>
+        <div class="user-container">
+            <div class="input-user">
+                <select name="choix" id="select" onchange="envoyerReponse()">
+                    <option value="">Choisis une réponse...</option>
+                </select>
+                <button onclick="envoyerReponse()">Envoyer</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+.main {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #1e3c72;
+    border-radius: 12px;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+.chat-container {
+    height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.msg-bot,.msg-user {
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+.msg-bot {
+    background: #2a5298;
+    color: white;
+    margin-right: auto;
+}
+.msg-user {
+    background: #00D9FF;
+    color: #1e3c72;
+    margin-left: auto;
+    text-align: right;
+}
+.input-user {
+    display: flex;
+    gap: 10px;
+}
+#select {
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #00D9FF;
+    background: #2a5298;
+    color: white;
+    font-size: 1rem;
+}
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: #00D9FF;
+    color: #1e3c72;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+
+<script>
+const chatBox = document.getElementById('chat-box');
+const select = document.getElementById('select');
+let etape = 0;
+let reponses = {};
+
+const questions = [
+    {
+        question: "Salut 👋 Je suis EDEN. Je vais t'aider à trouver ta filière idéale. Tu es en quelle classe?",
+        options: ["8ème", "3ème des humanités", "4ème des humanités", "5ème des humanités", "6ème des humanités", "Déjà diplômé"]
+    },
+    {
+        question: "Quelles matières tu préfères à l'école?",
+        options: ["Maths & Physique", "Biologie & Chimie", "Français & Philosophie", "Histoire & Géographie", "Informatique", "Commerce & Compta"]
+    },
+    {
+        question: "Qu'est-ce qui te motive le plus dans un métier?",
+        options: ["Un gros salaire", "Aider les gens", "Créer/inventer des choses", "Avoir du prestige", "Travailler à l'extérieur", "La stabilité"]
+    },
+    {
+        question: "Tu te vois travailler où plus tard?",
+        options: ["Dans un bureau", "Dans un hôpital", "Sur le terrain/chantier", "Dans un labo", "À mon compte", "À l'étranger"]
+    },
+    {
+        question: "Dernière question : Tu es plutôt...",
+        options: ["Logique et chiffres", "Contact humain", "Manuel et pratique", "Créatif et artistique", "Leader et gestion"]
+    }
+];
+
+function messageBot(texte) {
+    chatBox.innerHTML += `<div class="msg-bot">${texte}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function messageUser(texte) {
+    chatBox.innerHTML += `<div class="msg-user">${texte}</div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function chargerOptions() {
+    select.innerHTML = '<option value="">Choisis une réponse...</option>';
+    questions[etape].options.forEach(opt => {
+        select.innerHTML += `<option value="${opt}">${opt}</option>`;
+    });
+}
+
+function envoyerReponse() {
+    const choix = select.value;
+    if (!choix) return;
+    messageUser(choix);
+    reponses[`q${etape}`] = choix;
+    etape++;
+    if (etape < questions.length) {
+        setTimeout(() => {
+            messageBot(questions[etape].question);
+            chargerOptions();
+        }, 800);
+    } else {
+        setTimeout(() => {
+            donnerResultat();
+        }, 800);
+    }
+    select.value = "";
+}
+
+function donnerResultat() {
+    messageBot("Analyse terminée... 🤖");
+    setTimeout(() => {
+        let filiere = "";
+        if (reponses.q1.includes("Maths") || reponses.q4.includes("Logique")) {
+            filiere = "Génie Informatique ou Polytechnique à l'UNIKIN/ISTA";
+        } else if (reponses.q1.includes("Biologie") || reponses.q2.includes("Aider")) {
+            filiere = "Médecine, Pharmacie ou Biologie Médicale à l'UPC/UNIKIN";
+        } else if (reponses.q1.includes("Commerce") || reponses.q2.includes("salaire")) {
+            filiere = "Sciences Commerciales, Économie ou Gestion à l'UNIKIN/UPC";
+        } else if (reponses.q1.includes("Français") || reponses.q4.includes("Contact")) {
+            filiere = "Droit, Communication ou Sciences Sociales à l'UNIKIN";
+        } else {
+            filiere = "Agronomie ou Géologie - métiers d'avenir en RDC";
+        }
+        messageBot(`🎯 D'après tes réponses, EDEN te recommande : <br><strong>${filiere}</strong>`);
+        messageBot(`si tu veux une meilleur experience et avoir plus de detail click <button  id="link5" onclick="afficher(event)">ici</button>`)
+        document.querySelector('.input-user').style.display = 'none';
+    }, 1500);
+}
+
+window.onload = () => {
+    messageBot(questions[0].question);
+    chargerOptions();
+};
+</script>
+
+</body>
+<script src="index.js"></script>
+<script src="display.js"></script>
+
+</html>
